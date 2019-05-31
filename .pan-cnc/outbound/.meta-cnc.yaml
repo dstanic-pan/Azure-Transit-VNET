@@ -1,0 +1,77 @@
+# skillet preamble information used by panhandler
+# ---------------------------------------------------------------------
+# unique snippet name
+name: Azure-Tansit-VNET
+# label used for menu selection
+label: Azure Transit VNET Framework. Step 3 - Outbound use case
+description: >
+               This skillet demonstrates Outbound traffic inspection thru Hub NGFW’s by configuring Azure UDR’s and corresponding routes, NAT and security policies on VM-Series
+# type of device configuration
+# common types are panorama, panos, and template
+# https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
+type: Terraform
+# preload static or default-based templates
+extends:
+
+# grouping of like snippets for dynamic menu creation in panhandler
+labels:
+  collection:
+    - Azure-Tansit-VNET
+
+# ---------------------------------------------------------------------
+# end of preamble section
+
+# variables section
+# ---------------------------------------------------------------------
+# variables used in the configuration templates
+# type_hint defines the form field used by panhandler
+# type_hints can be text, ip_address, or dropdown
+variables:
+  - name: edl_name
+    description: EDL name
+    default: my_edl
+    type_hint: text
+  - name: edl_description
+    description: EDL description
+    default: my_description
+    type_hint: text
+  - name: edl_url
+    description: EDL url
+    default: my_default_url
+    type_hint: text
+  - name: tag_name
+    description: Tag name
+    default: Tag
+    type_hint: text
+  - name: tag_description
+    description: Tag description
+    default: Tag
+    type_hint: text
+  - name: tag_color
+    description: Tag color
+    default: red
+    type_hint: dropdown
+    dd_list:
+      - key: blue
+        value: color3
+      - key: orange
+        value: color6
+# ---------------------------------------------------------------------
+# end of variables section
+
+# snippets section
+# ---------------------------------------------------------------------
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: edl
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/external-list
+    file: edl.xml
+  - name: tag
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
+    file: tag.xml
+  - name: security_rules
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
+    file: security_rules.xml
+# ---------------------------------------------------------------------
+# end of snippets section
