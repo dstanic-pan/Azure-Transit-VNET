@@ -30,35 +30,83 @@ labels:
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
 variables:
-  - name: edl_name
-    description: EDL name
-    default: my_edl
+  - name: username
+    description: FW Username
+    default: panadmin
     type_hint: text
-  - name: edl_description
-    description: EDL description
-    default: my_description
+  - name: password
+    description: FW Password
+    default:
+    type_hint: password
+  - name: resource_group
+    description: Azure Resource Group
+    default: cloud-security-framework-changeme
     type_hint: text
-  - name: edl_url
-    description: EDL url
-    default: my_default_url
-    type_hint: text
-  - name: tag_name
-    description: Tag name
-    default: Tag
-    type_hint: text
-  - name: tag_description
-    description: Tag description
-    default: Tag
-    type_hint: text
-  - name: tag_color
-    description: Tag color
-    default: red
+  - name: azure_region
+    description: Azure Region
+    default: centralus
     type_hint: dropdown
     dd_list:
-      - key: blue
-        value: color3
-      - key: orange
-        value: color6
+     - key: "West US"
+       value: "westus"
+     - key: "West US 2"
+       value: "westus2"
+     - key: "West Central US"
+       value: "westcentralus"
+     - key: "East US"
+       value: "eastus"
+     - key: "East US 2"
+       value: "eastus2"
+     - key: "Central US"
+       value: "centralus"
+     - key: "North Central US"
+       value: "northcentralus"
+     - key: "South Central US"
+       value: "southcentralus"
+     - key: "Canada Central"
+       value: "canadacentral"
+     - key: "Canada East"
+       value: "canadaeast"
+     - key: "UK West"
+       value: "ukwest"
+     - key: "UK South"
+       value: "uksouth"
+     - key: "North Europe"
+       value: "northeurope"
+     - key: "West Europe"
+       value: "westeurope"
+     - key: "Australia East"
+       value: "australiaeast"
+     - key: "Australia Southeast"
+       value: "australiasoutheast"
+     - key: "Australia Central"
+       value: "australiacentral"
+     - key: "Australia Central 2"
+       value: "australiacentral2"
+     - key: "East Asia"
+       value: "eastasia"
+     - key: "South East Asia"
+       value: "southeastasia"
+     - key: "Korea Central"
+       value: "koreacentral"
+     - key: "Korea South"
+       value: "koreasouth"
+     - key: "Japan West"
+       value: "japanwest"
+     - key: "Japan East"
+       value: "japaneast"
+     - key: "South India"
+       value: "southindia"
+     - key: "Central India"
+       value: "centralindia"
+     - key: "West India"
+       value: "westindia"
+     - key: "Brazil South"
+       value: "brazilsouth"
+     - key: "France Central"
+       value: "francecentral"
+     - key: "France South"
+       value: "francesouth"
 # ---------------------------------------------------------------------
 # end of variables section
 
@@ -66,15 +114,15 @@ variables:
 # ---------------------------------------------------------------------
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
-snippets:
-  - name: edl
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/external-list
-    file: edl.xml
-  - name: tag
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
-    file: tag.xml
-  - name: security_rules
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
-    file: security_rules.xml
+#snippets:
+  #- name: edl
+  # xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/external-list
+  #  file: edl.xml
+  #- name: tag
+  #  xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
+  #  file: tag.xml
+  #- name: security_rules
+  #  xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
+  #  file: security_rules.xml
 # ---------------------------------------------------------------------
 # end of snippets section
