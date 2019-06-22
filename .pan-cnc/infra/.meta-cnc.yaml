@@ -30,19 +30,19 @@ labels:
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
 variables:
-  - name: username
+  - name: adminuser
     description: FW Username
     default: panadmin
     type_hint: text
-  - name: password
+  - name: adminuserpassword
     description: FW Password
-    default:
+    default: PanPassword123!
     type_hint: password
   - name: resource_group
     description: Azure Resource Group
-    default: cloud-security-framework-changeme
+    default: transit-vnet-demo-changeme
     type_hint: text
-  - name: azure_region
+  - name: location
     description: Azure Region
     default: centralus
     type_hint: dropdown
