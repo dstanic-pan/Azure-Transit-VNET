@@ -12,7 +12,7 @@ description: >
 # type of device configuration
 # common types are panorama, panos, and template
 # https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
-type: Terraform
+type: terraform
 # preload static or default-based templates
 extends:
 
