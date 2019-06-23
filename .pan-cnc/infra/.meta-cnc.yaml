@@ -3,12 +3,13 @@
 # unique snippet name
 name: Azure-Tansit-VNET
 # label used for menu selection
-label: Azure Transit VNET Framework. Step 1 - Infrastructure Deployment
+label: Azure Transit VNET Framework. Step 1 - Infrastructure Deployment & Step 6 - Infrastructure Destroy
 description: >
-               This skillet deploys Azure Hub and Spoke architecture that consist of VM-Series Azure Load Balancing Sandwich deployment in Hub VNET and two Spoke VNET's with test instances.
-               The template deploys the Following:
-               Azure VNET's, Route Tables, Subnet's, Availability Zones, Load Balancers and VNET Peering.
-               The Template will also deploy Palo Alto Networks Firewall with security posture.
+              Step 1 - This skillet deploys Azure Hub and Spoke architecture that consist of VM-Series Azure Load Balancing Sandwich deployment in Hub VNET and one Spoke VNET's with test instances.
+              The template deploys the Following:
+              Azure VNET's, Route Tables, Subnet's, Availability Zones, Load Balancers and VNET Peering.
+              The Template will also deploy Palo Alto Networks Firewalls.
+              Step 6 - Uses Terraform Destroy process to delete the deployment by removing Firewalls and all Azure components (VNET's, Instances, LB's, Resource Group, etc.).
 # type of device configuration
 # common types are panorama, panos, and template
 # https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
