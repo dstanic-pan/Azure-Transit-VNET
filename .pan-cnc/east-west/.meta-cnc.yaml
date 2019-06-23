@@ -32,7 +32,7 @@ variables:
     default: allow-all-web-dev
     type_hint: text
   - name: src_subnet1_adr_obj
-    description: Subnet1
+    description: Source Subnet1 for example dev-subnet
     default: dev-subnet
     type_hint: dropdown
     dd_list:
@@ -45,10 +45,10 @@ variables:
         - key: dev-subnet
           value: dev-subnet
   - name: src_subnet2_adr_obj
-      description: Source Subnet2
-      default: dev-subnet
-      type_hint: dropdown
-      dd_list:
+    description: Source Subnet2 for example dev-subnet
+    default: dev-subnet
+    type_hint: dropdown
+    dd_list:
         - key: web-subnet
           value: web-subnet
         - key: app-subnet
@@ -58,10 +58,10 @@ variables:
         - key: dev-subnet
           value: dev-subnet
   - name: dst_subnet1_adr_obj
-      description: Destination Subnet1
-      default: dev-subnet
-      type_hint: dropdown
-      dd_list:
+    description: Destination Subnet1 for example web-subnet
+    default: dev-subnet
+    type_hint: dropdown
+    dd_list:
         - key: web-subnet
           value: web-subnet
         - key: app-subnet
@@ -71,10 +71,10 @@ variables:
         - key: dev-subnet
           value: dev-subnet
   - name: dst_subnet2_adr_obj
-      description: Destination Subnet2
-      default: web-subnet
-      type_hint: dropdown
-      dd_list:
+    description: Destination Subnet2 for example dev-subnet
+    default: web-subnet
+    type_hint: dropdown
+    dd_list:
         - key: web-subnet
           value: web-subnet
         - key: app-subnet
@@ -84,10 +84,10 @@ variables:
         - key: dev-subnet
           value: dev-subnet
   - name: app_type1
-    description: Application type1
-      default: web-browsing
-      type_hint: dropdown
-      dd_list:
+    description: Application type1 for example any, web-browsing, ssh
+    default: web-browsing
+    type_hint: dropdown
+    dd_list:
         - key: any-application
           value: any
         - key: web
@@ -98,9 +98,9 @@ variables:
           value: ping
   - name: app_type2
     description: Application type2 for example any, web-browsing, ssh
-        default: ssh
-        type_hint: dropdown
-        dd_list:
+    default: ssh
+    type_hint: dropdown
+    dd_list:
           - key: any-application
             value: any
           - key: web
@@ -111,9 +111,9 @@ variables:
             value: ping
   - name: action_type1
     description: Action type allow or deny
-        default: allow
-        type_hint: dropdown
-        dd_list:
+    default: allow
+    type_hint: dropdown
+    dd_list:
           - key: allow
             value: allow
           - key: deny
