@@ -11,4 +11,6 @@
           <layer3>
             <member></member>
           </layer3>
+        </network>
+        <enable-user-identification>no</enable-user-identification>
       </entry>
