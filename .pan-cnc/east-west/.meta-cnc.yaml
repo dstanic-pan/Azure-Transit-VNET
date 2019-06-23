@@ -1,15 +1,15 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: Azure-Tansit-VNET-East-West
+name: Azure-Tansit-VNET
 # label used for menu selection
-label: Azure Transit VNET Framework. Step 4 - East/West traffic segmentation use case
+label: Azure Transit VNET Framework. Step 3 - Outbound use case
 description: >
-               This skillet demonstrates East/West traffic inspection and segmentation thru Hub NGFW’s by configuring Azure UDR’s and corresponding routes, NAT and security policies on VM-Series
+               This skillet demonstrates Outbound traffic inspection thru Hub NGFW’s by configuring Azure UDR’s and corresponding routes, NAT and security policies on VM-Series
 # type of device configuration
 # common types are panorama, panos, and template
 # https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
-type: terraform
+type: panos
 # preload static or default-based templates
 extends:
 
@@ -27,35 +27,101 @@ labels:
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
 variables:
-  - name: edl_name
-    description: EDL name
-    default: my_edl
+  - name: ew_security_policy_name
+    description: East West Security policy name
+    default: allow-all-web-dev
     type_hint: text
-  - name: edl_description
-    description: EDL description
-    default: my_description
-    type_hint: text
-  - name: edl_url
-    description: EDL url
-    default: my_default_url
-    type_hint: text
-  - name: tag_name
-    description: Tag name
-    default: Tag
-    type_hint: text
-  - name: tag_description
-    description: Tag description
-    default: Tag
-    type_hint: text
-  - name: tag_color
-    description: Tag color
-    default: red
-    type_hint: dropdown
-    dd_list:
-      - key: blue
-        value: color3
-      - key: orange
-        value: color6
+  - name: src_subnet1_adr_obj
+      description: Source Subnet 1 for example dev-subnet
+      default:
+      type_hint: dropdown
+      dd_list:
+        - key: web-subnet
+          value: web-subnet
+        - key: app-subnet
+          value: app-subnet
+        - key: db-subnet
+          value: db-subnet
+        - key: dev-subnet
+          value: dev-subnet
+  - name: src_subnet2_adr_obj
+      description: Source Subnet 2 for example web-subnet
+      default:
+      type_hint: dropdown
+      dd_list:
+        - key: web-subnet
+          value: web-subnet
+        - key: app-subnet
+          value: app-subnet
+        - key: db-subnet
+          value: db-subnet
+        - key: dev-subnet
+          value: dev-subnet
+  - name: dst_subnet1_adr_obj
+      description: Source Subnet 2 for example web-subnet
+      default:
+      type_hint: dropdown
+      dd_list:
+        - key: web-subnet
+          value: web-subnet
+        - key: app-subnet
+          value: app-subnet
+        - key: db-subnet
+          value: db-subnet
+        - key: dev-subnet
+          value: dev-subnet
+  - name: dst_subnet2_adr_obj
+      description: Source Subnet 2 for example web-subnet
+      default:
+      type_hint: dropdown
+      dd_list:
+        - key: web-subnet
+          value: web-subnet
+        - key: app-subnet
+          value: app-subnet
+        - key: db-subnet
+          value: db-subnet
+        - key: dev-subnet
+          value: dev-subnet
+  - name: app_type1
+    description: Application typ for example any, web-browsing, ssh
+     description: Source Subnet 1 for example dev-subnet
+      default:
+      type_hint: dropdown
+      dd_list:
+        - key: any-application
+          value: any
+        - key: web
+          value: web-browsing
+        - key: ssh
+          value: ssh
+        - key: ping
+          value: ping
+  - name: app_type2
+    description: Application typ for example any, web-browsing, ssh
+      description: Source Subnet 1 for example dev-subnet
+        default:
+        type_hint: dropdown
+        dd_list:
+          - key: any-application
+            value: any
+          - key: web
+            value: web-browsing
+          - key: ssh
+            value: ssh
+          - key: ping
+            value: ping
+  - name: action_type1
+    description: Application typ for example any, web-browsing, ssh
+      description: Source Subnet 1 for example dev-subnet
+        default:
+        type_hint: dropdown
+        dd_list:
+          - key: allow
+            value: allow
+          - key: deny
+            value: deny
+
 # ---------------------------------------------------------------------
 # end of variables section
 
@@ -64,14 +130,11 @@ variables:
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
-  - name: edl
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/external-list
-    file: edl.xml
-  - name: tag
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
-    file: tag.xml
   - name: security_rules
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
     file: security_rules.xml
+  - name: nat_rules
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/nat/rules
+    file: nat_rules.xml
 # ---------------------------------------------------------------------
 # end of snippets section
