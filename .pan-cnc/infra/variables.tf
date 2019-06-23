@@ -21,7 +21,7 @@ variable "vnet_name" {
 }
 
 variable "vnet_cidr" {
-  type        = "list"
+  //type        = "list"
   description = "Enter VNET Space:"
   default     = ["10.0.0.0/16"]
 }
@@ -32,7 +32,7 @@ variable "spoke1-vnet_name" {
 }
 
 variable "spoke1-vnet_cidr" {
-  type        = "list"
+  //type        = "list"
   description = "Enter VNET Space:"
   default     = ["10.1.0.0/16"]
 }
