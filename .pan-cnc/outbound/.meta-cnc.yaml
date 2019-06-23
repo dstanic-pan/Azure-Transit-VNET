@@ -1,9 +1,9 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: Azure-Tansit-VNET-Outbound
+name: Azure-Tansit-VNET
 # label used for menu selection
-label: Azure Transit VNET Framework. Step 2 - Outbound use case
+label: Azure Transit VNET Framework. Step 3 - Outbound use case
 description: >
                This skillet demonstrates Outbound traffic inspection thru Hub NGFW’s by configuring Azure UDR’s and corresponding routes, NAT and security policies on VM-Series
 # type of device configuration
@@ -43,11 +43,23 @@ variables:
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
+  - name: interface_management_profile
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/profiles/interface-management-profile
+    file: int_mgmt_profile.xml
+  - name: zone_configurations
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/zone
+    file: zone_configurations.xml
+  - name: interface_configurations
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/interface
+    file: interface_configurations.xml
+  - name: vr_configurations
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/route
+    file: vr_configurations.xml
   - name: security_rules
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
-    file: security_rules.xml
+    file: in_security_rules.xml
   - name: nat_rules
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/nat/rules
-    file: nat_rules.xml
+    file: in_nat_rules.xml
 # ---------------------------------------------------------------------
 # end of snippets section
