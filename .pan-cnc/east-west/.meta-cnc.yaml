@@ -1,7 +1,7 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: Azure-Tansit-VNET
+name: Azure-Tansit-VNET-East-West
 # label used for menu selection
 label: Azure Transit VNET Framework. Step 4 - East/West traffic segmentation use case
 description: >
