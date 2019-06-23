@@ -110,18 +110,7 @@ variables:
   - name: vnet_cidr
     description: HUB VNET Space (i.e. transit-vnet 10.0.0.0/16)
     default: 10.0.0.0/16
-    type_hint: dropdown
-    dd_list:
-      - key: "10.0.0.0/16"
-        value: "10.0.0.0/16"
-      - key: "10.1.0.0/16"
-        value: "10.1.0.0/16"
-      - key: "10.2.0.0/16"
-        value: "10.2.0.0/16"
-  #- name: vnet_cidr
-  #  description: HUB VNET Space (i.e. transit-vnet 10.0.0.0/16)
-  #  default: 10.0.0.0/16
-  #  type_hint: cidr
+    type_hint: cidr
   - name: subnet0_cidr
     description: FW-Management Subnet Space (i.e. 10.0.0.0/24)
     default: 10.0.0.0/24
