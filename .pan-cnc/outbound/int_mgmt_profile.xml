@@ -1,0 +1,16 @@
+<entry name="allow-health-probe">
+        <ping>no</ping>
+        <telnet>no</telnet>
+        <ssh>yes</ssh>
+        <http>no</http>
+        <http-ocsp>no</http-ocsp>
+        <https>no</https>
+        <snmp>no</snmp>
+        <response-pages>no</response-pages>
+        <userid-service>no</userid-service>
+        <userid-syslog-listener-ssl>no</userid-syslog-listener-ssl>
+        <userid-syslog-listener-udp>no</userid-syslog-listener-udp>
+        <permitted-ip>
+          <entry name="168.63.129.16/32"/>
+        </permitted-ip>
+      </entry>
