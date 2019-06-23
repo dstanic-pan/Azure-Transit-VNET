@@ -31,11 +31,11 @@ labels:
 # type_hints can be text, ip_address, or dropdown
 variables:
   - name: adminuser
-    description: FW Username
+    description: FW, Web, Dev Username
     default: panadmin
     type_hint: text
   - name: adminuserpassword
-    description: FW Password
+    description: FW, Web, Dev Password
     default: PanPassword123!
     type_hint: password
   - name: resource_group
@@ -107,6 +107,50 @@ variables:
        value: "francecentral"
      - key: "France South"
        value: "francesouth"
+  - name: vnet_cidr
+    description: HUB VNET Space (i.e. transit-vnet 10.0.0.0/16)
+    default: 10.0.0.0/16
+    type_hint: text
+  - name: subnet0_cidr
+    description: FW-Management Subnet Space (i.e. 10.0.0.0/24)
+    default: 10.0.0.0/24
+    type_hint: text
+  - name: subnet1_cidr
+    description: UnTrust Subnet Space (i.e. 10.0.1.0/24)
+    default: 10.0.1.0/24
+    type_hint: text
+  - name: subnet2_cidr
+    description: Trust Subnet Space (i.e. 10.0.2.0/24)
+    default: 10.0.2.0/24
+    type_hint: text
+  - name: subnet3_cidr
+    description: LB-Subnet Space (i.e. 10.0.3.0/24)
+    default: 10.0.3.0/24
+    type_hint: text
+  - name: spoke1-vnet_cidr
+    description: Spoke1 VNET Space (i.e. transit-vnet 10.1.0.0/16)
+    default: 10.1.0.0/16
+    type_hint: text
+  - name: subnet10_cidr
+    description: Web Subnet Space (i.e. 10.1.0.0/24)
+    default: 10.1.0.0/24
+    type_hint: text
+  - name: subnet11_cidr
+    description: App Subnet Space (i.e. 10.0.1.0/24)
+    default: 10.1.1.0/24
+    type_hint: text
+  - name: subnet12_cidr
+    description: DB Subnet Space (i.e. 10.0.2.0/24)
+    default: 10.1.2.0/24
+    type_hint: text
+  - name: subnet13_cidr
+    description: Dev Subnet Space (i.e. 10.0.3.0/24)
+    default: 10.1.3.0/24
+    type_hint: text
+  - name: egresslb_ip
+    description: Internal Egress LB FrontEnd IP (IP must be part of LB-Subnet space i.e. 10.0.3.100)
+    default: 10.0.3.100
+    type_hint: text
 # ---------------------------------------------------------------------
 # end of variables section
 
@@ -123,6 +167,6 @@ variables:
   #  file: tag.xml
   #- name: security_rules
   #  xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
-  #  file: security_rules.xml
+  #  file: in_security_rules.xml
 # ---------------------------------------------------------------------
 # end of snippets section
