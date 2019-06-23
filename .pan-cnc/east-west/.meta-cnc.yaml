@@ -32,10 +32,10 @@ variables:
     default: allow-all-web-dev
     type_hint: text
   - name: src_subnet1_adr_obj
-      description: Subnet1
-      default: dev-subnet
-      type_hint: dropdown
-      dd_list:
+    description: Subnet1
+    default: dev-subnet
+    type_hint: dropdown
+    dd_list:
         - key: web-subnet
           value: web-subnet
         - key: app-subnet
