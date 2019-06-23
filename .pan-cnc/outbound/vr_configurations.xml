@@ -11,29 +11,6 @@
                 <decay-half-life-unreachable>900</decay-half-life-unreachable>
                 <enable>yes</enable>
               </entry>
-            </dampening-profile>
-            <routing-options>
-              <graceful-restart>
-                <enable>yes</enable>
-              </graceful-restart>
-            </routing-options>
-          </bgp>
-          <rip>
-            <enable>no</enable>
-          </rip>
-          <ospf>
-            <enable>no</enable>
-          </ospf>
-          <ospfv3>
-            <enable>no</enable>
-          </ospfv3>
-        </protocol>
-        <ecmp>
-          <algorithm>
-            <ip-modulo/>
-          </algorithm>
-        </ecmp>
-      </entry>
       <entry name="trust-vr">
         <ecmp>
           <algorithm>
