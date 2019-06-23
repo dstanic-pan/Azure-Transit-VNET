@@ -13,6 +13,7 @@ adminuserpassword     = "PanPassword123!"
 
 # HUB-VNET variables
 //vnet_name             = "transit-vnet"
+vnet_cidr1            = "${split(",", var.vnet_cidr)}"
 subnet0_name          = "fw-management"
 subnet1_name          = "untrust"
 subnet2_name          = "trust"
@@ -24,6 +25,7 @@ subnet3_cidr          = "10.0.3.0/24"
 
 # Spoke1-VNET variables
 //vnet_name             = "transit-vnet"
+spoke1-vnet_cidr1      = "${split(",", var.spoke1-vnet_cidr)}"
 subnet10_name          = "web"
 subnet11_name          = "app"
 subnet12_name          = "db"
