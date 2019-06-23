@@ -33,17 +33,17 @@ variables:
     type_hint: text
   - name: src_subnet1_adr_obj
       description: Subnet1
-      default: 'dev-subnet'
+      default: dev-subnet
       type_hint: dropdown
       dd_list:
-        - key: 'web-subnet'
-          value: 'web-subnet'
-        - key: 'app-subnet'
-          value: 'app-subnet'
-        - key: 'db-subnet'
-          value: 'db-subnet'
-        - key: 'dev-subnet'
-          value: 'dev-subnet'
+        - key: web-subnet
+          value: web-subnet
+        - key: app-subnet
+          value: app-subnet
+        - key: db-subnet
+          value: db-subnet
+        - key: dev-subnet
+          value: dev-subnet
   - name: src_subnet2_adr_obj
       description: Source Subnet2
       default: dev-subnet
