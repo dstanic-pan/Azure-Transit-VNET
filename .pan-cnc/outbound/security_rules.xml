@@ -1,4 +1,4 @@
-<entry name="allow-azure-health-probe" uuid="1986fdf9-0703-4453-ba58-61a998155d34">
+<entry name="allow-azure-health-probe">
         <to>
           <member>any</member>
         </to>
