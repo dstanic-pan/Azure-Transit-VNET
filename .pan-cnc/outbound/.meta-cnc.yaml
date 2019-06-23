@@ -44,7 +44,7 @@ variables:
 # files will load in the order listed
 snippets:
   - name: security_rules
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules1
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
     file: security_rules.xml
   - name: nat_rules
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/nat/rules
