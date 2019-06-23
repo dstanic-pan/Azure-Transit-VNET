@@ -32,7 +32,7 @@ variables:
     default: allow-all-web-dev
     type_hint: text
   - name: src_subnet1_adr_obj
-      description: Source Subnet 1 for example dev-subnet
+      description: Source Subnet1 for example dev-subnet
       default:
       type_hint: dropdown
       dd_list:
@@ -45,7 +45,7 @@ variables:
         - key: dev-subnet
           value: dev-subnet
   - name: src_subnet2_adr_obj
-      description: Source Subnet 2 for example web-subnet
+      description: Source Subnet2 for example web-subnet
       default:
       type_hint: dropdown
       dd_list:
@@ -58,7 +58,7 @@ variables:
         - key: dev-subnet
           value: dev-subnet
   - name: dst_subnet1_adr_obj
-      description: Source Subnet 2 for example web-subnet
+      description: Destination Subnet1 for example web-subnet
       default:
       type_hint: dropdown
       dd_list:
@@ -71,7 +71,7 @@ variables:
         - key: dev-subnet
           value: dev-subnet
   - name: dst_subnet2_adr_obj
-      description: Source Subnet 2 for example web-subnet
+      description: Destination Subnet2 for example web-subnet
       default:
       type_hint: dropdown
       dd_list:
