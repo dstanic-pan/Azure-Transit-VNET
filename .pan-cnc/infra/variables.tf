@@ -1,14 +1,14 @@
 variable "BootstrapStorageAccount" {
   description = "Enter your Azure Storage Account:"
-  default     = "cloudstorageazure"
+  default     = "None"
 }
 variable "StorageAccountAccessKey" {
   description = "Paste your Azure Storage Account Access Key:"
-  default     = "2bowzrRAQnU+WuqdUcQ3A/3jpYip0Jns+CNtt9BsxTQu8Q3qv4FjXm6KDtr7LkogGfoXnwpekSWoa4QAzbJtHw=="
+  default     = "None"
 }
 variable "StorageAccountFileShare" {
   description = "Enter your Storage Acccount File Share name:"
-  default     = "bootstrap"
+  default     = "None"
 }
 variable "StorageAccountFileShareDirectory" {
   description = "Enter your Storage Account File Share Directory (if bootstrapping multiple firewalls):"
@@ -126,11 +126,3 @@ variable "publiclbrule1_port" {}
 variable "publiclbrule2_name" {}
 variable "publiclbrule2_port" {}
 variable "publiclbpip_name" {}
-
-# bootstrap variables
-
-# route table variables
-variable "rtgatewaySubnetName" {
-    default = "gatewaysubnet-enterprisecommonsharedqa-westeurope"}
-variable "rttrustSubnetName" {
-default = "trustsubnet-enterprisecommonsharedqa-westeurope"}
