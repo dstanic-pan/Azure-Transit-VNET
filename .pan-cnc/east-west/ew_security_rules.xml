@@ -21,8 +21,6 @@
         </category>
         <application>
           <member>{{ app_type1 }}</member>
-        </application>
-        <application>
           <member>{{ app_type2 }}</member>
         </application>
         <service>
