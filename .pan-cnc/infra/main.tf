@@ -300,6 +300,7 @@ resource "azurerm_lb_rule" "publiclbrule1" {
   frontend_ip_configuration_name 	= "${var.publiclbfrontend_name}"
   backend_address_pool_id 				= "${azurerm_lb_backend_address_pool.publiclbbackend.id}"
   probe_id												= "${azurerm_lb_probe.publiclbprobe.id}"
+  enable_floating_ip              = "true"
 }
 
 resource "azurerm_lb_rule" "publiclbrule2" {
@@ -312,6 +313,7 @@ resource "azurerm_lb_rule" "publiclbrule2" {
   frontend_ip_configuration_name 	= "${var.publiclbfrontend_name}"
   backend_address_pool_id 				= "${azurerm_lb_backend_address_pool.publiclbbackend.id}"
   probe_id												= "${azurerm_lb_probe.publiclbprobe.id}"
+  enable_floating_ip              = "true"
 }
 
 ################################################################################
