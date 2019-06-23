@@ -1,0 +1,12 @@
+<entry name="web-subnet">
+        <ip-netmask>10.1.0.0/24</ip-netmask>
+</entry>
+<entry name="app-subnet">
+        <ip-netmask>10.1.1.0/24</ip-netmask>
+</entry>
+<entry name="db-subnet">
+        <ip-netmask>10.1.2.0/24</ip-netmask>
+</entry>
+<entry name="dev-subnet">
+        <ip-netmask>10.1.3.0/24</ip-netmask>
+</entry>
