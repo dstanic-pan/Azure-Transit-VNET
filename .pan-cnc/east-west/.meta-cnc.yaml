@@ -33,7 +33,7 @@ variables:
     type_hint: text
   - name: src_subnet1_adr_obj
       description: Source Subnet1 for example dev-subnet
-      default:
+      default: dev-subnet
       type_hint: dropdown
       dd_list:
         - key: web-subnet
@@ -46,7 +46,7 @@ variables:
           value: dev-subnet
   - name: src_subnet2_adr_obj
       description: Source Subnet2 for example web-subnet
-      default:
+      default: dev-subnet
       type_hint: dropdown
       dd_list:
         - key: web-subnet
@@ -59,7 +59,7 @@ variables:
           value: dev-subnet
   - name: dst_subnet1_adr_obj
       description: Destination Subnet1 for example web-subnet
-      default:
+      default: dev-subnet
       type_hint: dropdown
       dd_list:
         - key: web-subnet
@@ -72,7 +72,7 @@ variables:
           value: dev-subnet
   - name: dst_subnet2_adr_obj
       description: Destination Subnet2 for example web-subnet
-      default:
+      default: web-subnet
       type_hint: dropdown
       dd_list:
         - key: web-subnet
@@ -86,7 +86,7 @@ variables:
   - name: app_type1
     description: Application typ for example any, web-browsing, ssh
      description: Source Subnet 1 for example dev-subnet
-      default:
+      default: web-browsing
       type_hint: dropdown
       dd_list:
         - key: any-application
@@ -100,7 +100,7 @@ variables:
   - name: app_type2
     description: Application typ for example any, web-browsing, ssh
       description: Source Subnet 1 for example dev-subnet
-        default:
+        default: ssh
         type_hint: dropdown
         dd_list:
           - key: any-application
@@ -114,7 +114,7 @@ variables:
   - name: action_type1
     description: Application typ for example any, web-browsing, ssh
       description: Source Subnet 1 for example dev-subnet
-        default:
+        default: allow
         type_hint: dropdown
         dd_list:
           - key: allow
