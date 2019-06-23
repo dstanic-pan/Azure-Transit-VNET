@@ -85,12 +85,12 @@ variable "sgrule2_name" {}
 
 # network interfaces variables
 variable "egresslb_ip" {}
-variable "fw1nic0_ip" {}
-variable "fw1nic1_ip" {}
-variable "fw1nic2_ip" {}
-variable "fw2nic0_ip" {}
-variable "fw2nic1_ip" {}
-variable "fw2nic2_ip" {}
+//variable "fw1nic0_ip" {}
+//variable "fw1nic1_ip" {}
+//variable "fw1nic2_ip" {}
+//variable "fw2nic0_ip" {}
+//variable "fw2nic1_ip" {}
+//variable "fw2nic2_ip" {}
 variable "fw1nic0_name" {}
 variable "fw1nic1_name" {}
 variable "fw1nic2_name" {}
