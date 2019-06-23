@@ -1,0 +1,16 @@
+<entry name="trust-zone">
+        <network>
+          <layer3>
+            <member>ethernet1/2</member>
+          </layer3>
+        </network>
+        <enable-user-identification>no</enable-user-identification>
+      </entry>
+      <entry name="untrust-zone">
+        <network>
+          <layer3>
+            <member>ethernet1/1</member>
+          </layer3>
+        </network>
+        <enable-user-identification>no</enable-user-identification>
+      </entry>
