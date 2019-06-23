@@ -83,4 +83,4 @@ publiclbrule2_port    = 22
 publiclbpip_name      = "public-lb-pip"
 
 #Route table variables
-routetable1name       = "rt-gatewaysubnet-enterprisecommonsharedqa-westeurope"
+routetable1name       = "none"
