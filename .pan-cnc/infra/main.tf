@@ -58,23 +58,23 @@ resource "azurerm_route_table" "rt-websubnet" {
     next_hop_in_ip_address = "${var.egresslb_ip}"
   }
  route {
-    name                   = "rt-spoke1-vnet"
-    address_prefix         = "10.1.0.0/16"
+    name                   = "rt-app-subnet"
+    address_prefix         = "${var.subnet11_cidr}"
     next_hop_type          = "VirtualAppliance"
     next_hop_in_ip_address = "${var.egresslb_ip}"
   }
- //route {
- //   name                   = "rt-spoke1-qa-test"
- //   address_prefix         = "100.83.202.0/28"
- //   next_hop_type          = "VirtualAppliance" 
- //   next_hop_in_ip_address = "${var.egresslb_ip}"
-//}
- //route {
- //   name                   = "rt-spoke2-qa-test"
- //   address_prefix         = "100.83.202.16/28"
- //   next_hop_type          = "VirtualAppliance"
- //   next_hop_in_ip_address = "${var.egresslb_ip}"
-//}
+ route {
+    name                   = "rt-db-subnet"
+    address_prefix         = "${var.subnet12_cidr}"
+    next_hop_type          = "VirtualAppliance"
+    next_hop_in_ip_address = "${var.egresslb_ip}"
+  }
+   route {
+    name                   = "rt-dev-subnet"
+    address_prefix         = "${var.subnet13_cidr}"
+    next_hop_type          = "VirtualAppliance"
+    next_hop_in_ip_address = "${var.egresslb_ip}"
+  }
 }
 
 # Create a route table for Dev subnet
@@ -89,9 +89,21 @@ resource "azurerm_route_table" "rt-devsubnet" {
     next_hop_type          = "VirtualAppliance"
     next_hop_in_ip_address = "${var.egresslb_ip}"
   }
- route {
-    name                   = "rt-spoke1-vnet"
-    address_prefix         = "10.1.0.0/16"
+  route {
+    name                   = "rt-web-subnet"
+    address_prefix         = "${var.subnet10_cidr}"
+    next_hop_type          = "VirtualAppliance"
+    next_hop_in_ip_address = "${var.egresslb_ip}"
+  }
+    route {
+    name                   = "rt-app-subnet"
+    address_prefix         = "${var.subnet11_cidr}"
+    next_hop_type          = "VirtualAppliance"
+    next_hop_in_ip_address = "${var.egresslb_ip}"
+  }
+    route {
+    name                   = "rt-db-subnet"
+    address_prefix         = "${var.subnet12_cidr}"
     next_hop_type          = "VirtualAppliance"
     next_hop_in_ip_address = "${var.egresslb_ip}"
   }
@@ -664,11 +676,11 @@ output "b) PASSWORD    " {
 }
 
 output "c) IP FW1 MGMT " {
-  value = "${var.fw1nic0_ip}"
+  value = "${azurerm_public_ip.fw1nic0pip.ip_address}"
 }
 
 output "d) IP FW2 MGMT " {
-  value = "${var.fw2nic0_ip}"
+  value = "${azurerm_public_ip.fw2nic0pip.ip_address}"
 }
 
 output "e) PUBLIC LB IP" {
