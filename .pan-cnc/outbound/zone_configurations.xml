@@ -1,16 +1,10 @@
 <entry name="trust-zone">
         <network>
-          <layer3>
-            <member></member>
-          </layer3>
+          <layer3/>
         </network>
-        <enable-user-identification>no</enable-user-identification>
       </entry>
       <entry name="untrust-zone">
         <network>
-          <layer3>
-            <member></member>
-          </layer3>
+          <layer3/>
         </network>
-        <enable-user-identification>no</enable-user-identification>
       </entry>
