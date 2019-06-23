@@ -52,6 +52,8 @@ variables:
     default: dev-subnet
     type_hint: dropdown
     dd_list:
+        - key: any-subnet
+          value: any
         - key: web-subnet
           value: web-subnet
         - key: app-subnet
@@ -65,6 +67,8 @@ variables:
     default: dev-subnet
     type_hint: dropdown
     dd_list:
+        - key: any-subnet
+          value: any
         - key: web-subnet
           value: web-subnet
         - key: app-subnet
@@ -78,6 +82,8 @@ variables:
     default: dev-subnet
     type_hint: dropdown
     dd_list:
+        - key: any-subnet
+          value: any
         - key: web-subnet
           value: web-subnet
         - key: app-subnet
@@ -91,6 +97,8 @@ variables:
     default: web-subnet
     type_hint: dropdown
     dd_list:
+        - key: any-subnet
+          value: any
         - key: web-subnet
           value: web-subnet
         - key: app-subnet
