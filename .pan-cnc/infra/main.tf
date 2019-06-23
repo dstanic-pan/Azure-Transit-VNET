@@ -356,8 +356,8 @@ resource "azurerm_network_interface" "fw1nic0" {
   ip_configuration {
     name                          = "ipconfig1"
     subnet_id      = "${azurerm_subnet.fw-management.id}"
-    private_ip_address_allocation = "static"
-    private_ip_address						= "${var.fw1nic0_ip}"
+    private_ip_address_allocation = "dynamic"
+    //private_ip_address						= "${var.fw1nic0_ip}"
     public_ip_address_id          = "${azurerm_public_ip.fw1nic0pip.id}"
   }
 }
@@ -372,8 +372,8 @@ resource "azurerm_network_interface" "fw1nic1" {
   ip_configuration {
     name                                    = "ipconfig1"
     subnet_id      = "${azurerm_subnet.untrust.id}"
-    private_ip_address_allocation           = "static"
-    private_ip_address						          = "${var.fw1nic1_ip}"
+    private_ip_address_allocation           = "dynamic"
+    //private_ip_address						          = "${var.fw1nic1_ip}"
     public_ip_address_id                    = "${azurerm_public_ip.fw1nic1pip.id}"
     load_balancer_backend_address_pools_ids	= ["${azurerm_lb_backend_address_pool.publiclbbackend.id}"]
   }
@@ -392,8 +392,8 @@ resource "azurerm_network_interface" "fw1nic2" {
   ip_configuration {
     name                                    = "ipconfig1"
     subnet_id      = "${azurerm_subnet.trust.id}"
-    private_ip_address_allocation           = "static"
-    private_ip_address						          = "${var.fw1nic2_ip}"
+    private_ip_address_allocation           = "dynamic"
+    //private_ip_address						          = "${var.fw1nic2_ip}"
     load_balancer_backend_address_pools_ids	= ["${azurerm_lb_backend_address_pool.egresslbbackend.id}"]
   }
 }
@@ -474,8 +474,8 @@ resource "azurerm_network_interface" "fw2nic0" {
   ip_configuration {
     name                          = "ipconfig1"
     subnet_id      = "${azurerm_subnet.fw-management.id}"
-    private_ip_address_allocation = "static"
-    private_ip_address						= "${var.fw2nic0_ip}"
+    private_ip_address_allocation = "dynamic"
+    //private_ip_address						= "${var.fw2nic0_ip}"
     public_ip_address_id          = "${azurerm_public_ip.fw2nic0pip.id}"
   }
 }
@@ -490,8 +490,8 @@ resource "azurerm_network_interface" "fw2nic1" {
   ip_configuration {
     name                                    = "ipconfig1"
     subnet_id      = "${azurerm_subnet.untrust.id}"
-    private_ip_address_allocation           = "static"
-    private_ip_address						          = "${var.fw2nic1_ip}"
+    private_ip_address_allocation           = "dynamic"
+    //private_ip_address						          = "${var.fw2nic1_ip}"
     public_ip_address_id                    = "${azurerm_public_ip.fw2nic1pip.id}"
     load_balancer_backend_address_pools_ids	= ["${azurerm_lb_backend_address_pool.publiclbbackend.id}"]
   }
@@ -507,8 +507,8 @@ resource "azurerm_network_interface" "fw2nic2" {
   ip_configuration {
     name                                    = "ipconfig1"
     subnet_id      = "${azurerm_subnet.trust.id}"
-    private_ip_address_allocation           = "static"
-    private_ip_address						          = "${var.fw2nic2_ip}"
+    private_ip_address_allocation           = "dynamic"
+    //private_ip_address						          = "${var.fw2nic2_ip}"
     load_balancer_backend_address_pools_ids	= ["${azurerm_lb_backend_address_pool.egresslbbackend.id}"]
   }
 }
