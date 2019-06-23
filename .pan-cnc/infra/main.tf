@@ -675,11 +675,11 @@ output "b) PASSWORD    " {
   value = "${var.adminuserpassword}"
 }
 
-output "c) IP FW1 MGMT " {
+output "c) PUBLIC IP FW1 MGMT " {
   value = "${azurerm_public_ip.fw1nic0pip.ip_address}"
 }
 
-output "d) IP FW2 MGMT " {
+output "d) PUBLIC IP FW2 MGMT " {
   value = "${azurerm_public_ip.fw2nic0pip.ip_address}"
 }
 
@@ -689,4 +689,20 @@ output "e) PUBLIC LB IP" {
 
 output "f) EGRESS LB IP" {
   value  = "${var.egresslb_ip}"
+}
+
+output "g) WEB SUBNET CIDR" {
+  value  = "${var.subnet10_cidr}"
+}
+
+output "h) DEV SUBNET CIDR" {
+  value  = "${var.subnet13_cidr}"
+}
+
+output "i) IP WEB1" {
+  value  = "${azurerm_network_interface.spoke1-web-nic0.private_ip_address}"
+}
+
+output "j) IP DEV" {
+  value  = "${azurerm_network_interface.spoke1-dev01-nic0.private_ip_address}"
 }
