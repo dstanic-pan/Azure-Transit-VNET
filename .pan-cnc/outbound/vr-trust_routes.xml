@@ -42,14 +42,14 @@
             <hold-time>2</hold-time>
           </path-monitor>
           <nexthop>
-            <ip-address>10.0.2.1</ip-address>
+            <ip-address>{{vr_trust_nexthop}}</ip-address>
           </nexthop>
           <bfd>
             <profile>None</profile>
           </bfd>
           <interface>ethernet1/2</interface>
           <metric>10</metric>
-          <destination>10.1.0.0/16</destination>
+          <destination>{{spoke1_vnet_cidr}}</destination>
           <route-table>
             <unicast/>
           </route-table>
