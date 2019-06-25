@@ -1,6 +1,6 @@
           <entry name="default">
             <nexthop>
-              <ip-address>"{{ vr-untrust_nexthop }}"</ip-address>
+              <ip-address>"{{ vr_untrust_nexthop }}"</ip-address>
             </nexthop>
             <bfd>
               <profile>None</profile>
@@ -30,7 +30,7 @@
               <profile>None</profile>
             </bfd>
             <metric>10</metric>
-            <destination>"{{ spoke1-vnet_cidr }}"</destination>
+            <destination>"{{ spoke1_vnet_cidr }}"</destination>
             <route-table>
               <unicast/>
             </route-table>
