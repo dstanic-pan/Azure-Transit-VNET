@@ -49,7 +49,7 @@
             </bfd>
             <interface>ethernet1/2</interface>
             <metric>10</metric>
-            <destination>"{{ spoke1-vnet_cidr }}"</destination>
+            <destination>"{{ spoke1_vnet_cidr }}"</destination>
             <route-table>
               <unicast/>
             </route-table>
