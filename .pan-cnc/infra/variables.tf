@@ -1,14 +1,14 @@
 variable "BootstrapStorageAccount" {
   description = "Enter your Azure Storage Account:"
-  default     = "None"
+  default     = "cloudstorageazure"
 }
 variable "StorageAccountAccessKey" {
   description = "Paste your Azure Storage Account Access Key:"
-  default     = "None"
+  default     = "2bowzrRAQnU+WuqdUcQ3A/3jpYip0Jns+CNtt9BsxTQu8Q3qv4FjXm6KDtr7LkogGfoXnwpekSWoa4QAzbJtHw=="
 }
 variable "StorageAccountFileShare" {
   description = "Enter your Storage Acccount File Share name:"
-  default     = "None"
+  default     = "bootstrap"
 }
 variable "StorageAccountFileShareDirectory" {
   description = "Enter your Storage Account File Share Directory (if bootstrapping multiple firewalls):"
