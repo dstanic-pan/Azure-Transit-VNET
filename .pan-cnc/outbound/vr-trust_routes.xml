@@ -35,7 +35,7 @@
               <unicast/>
             </route-table>
           </entry>
-          <entry name="spoke1-vnet">
+          <entry name="spoke1_vnet">
             <path-monitor>
               <enable>no</enable>
               <failure-condition>any</failure-condition>

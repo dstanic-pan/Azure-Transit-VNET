@@ -59,7 +59,7 @@ snippets:
 #    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='untrust-vr']/routing-table
 #    file: vr-untrust_routes.xml
   - name: trust_routes
-    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='trust-vr']/routing-table
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='trust-vr']/routing-table/ip/static-route
     file: vr-trust_routes.xml
   - name: security_rules
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
