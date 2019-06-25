@@ -43,10 +43,10 @@ variables:
   #  description: First IP from Trust Subnet CIDR (i.e. 10.0.2.1)
   #  default: "10.0.2.1"
   #  type_hint: ip
-  - name: spoke1_vnet_cidr
-    description: Spoke1 VNET Space (i.e. transit-vnet 10.1.0.0/16)
-    default: 10.1.0.0/16
-    type_hint: cidr
+  #- name: spoke1_vnet_cidr
+  #  description: Spoke1 VNET Space (i.e. transit-vnet 10.1.0.0/16)
+  #  default: 10.1.0.0/16
+  #  type_hint: cidr
 # ---------------------------------------------------------------------
 # end of variables section
 
