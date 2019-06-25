@@ -37,12 +37,12 @@ variables:
     type_hint: text
   - name: vr-untrust_nexthop
     description: First IP from UnTrust Subnet CIDR (i.e. 10.0.1.1)
-    default: 10.0.1.1
-    type_hint: text
+    default: "10.0.1.1"
+    type_hint: ip
   - name: vr-trust_nexthop
-    description: First IP from UnTrust Subnet CIDR (i.e. 10.0.2.1)
-    default: 10.0.2.1
-    type_hint: text
+    description: First IP from Trust Subnet CIDR (i.e. 10.0.2.1)
+    default: "10.0.2.1"
+    type_hint: ip
   - name: spoke1-vnet_cidr
     description: Spoke1 VNET Space (i.e. transit-vnet 10.1.0.0/16)
     default: 10.1.0.0/16
@@ -55,10 +55,10 @@ variables:
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
-  - name: vr-untrust_routes
+  - name: untrust_routes
     xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='untrust-vr']/routing-table
     file: vr-untrust_routes.xml
-  - name: vr-trust_routes
+  - name: trust_routes
     xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='trust-vr']/routing-table
     file: vr-trust_routes.xml
   - name: security_rules
