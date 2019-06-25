@@ -1,6 +1,6 @@
         <entry name="health-probe">
           <nexthop>
-            <ip-address>10.0.2.1</ip-address>
+            <ip-address>"{{vr_trust_nexthop}}"</ip-address>
           </nexthop>
           <bfd>
             <profile>None</profile>
