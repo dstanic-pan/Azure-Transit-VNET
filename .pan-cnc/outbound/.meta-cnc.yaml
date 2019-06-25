@@ -68,4 +68,4 @@ snippets:
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/nat/rules
     file: nat_rules.xml
 # ---------------------------------------------------------------------
-# end of snippets section
+# end of snippets section 
