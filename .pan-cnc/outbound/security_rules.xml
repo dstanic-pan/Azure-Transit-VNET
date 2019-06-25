@@ -1,33 +1,3 @@
-<entry name="allow-azure-health-probe">
-        <to>
-          <member>any</member>
-        </to>
-        <from>
-          <member>any</member>
-        </from>
-        <source>
-          <member>168.63.129.16</member>
-        </source>
-        <destination>
-          <member>any</member>
-        </destination>
-        <source-user>
-          <member>any</member>
-        </source-user>
-        <category>
-          <member>any</member>
-        </category>
-        <application>
-          <member>ssh</member>
-        </application>
-        <service>
-          <member>application-default</member>
-        </service>
-        <hip-profiles>
-          <member>any</member>
-        </hip-profiles>
-        <action>allow</action>
-      </entry>
 <entry name="{{ security_policy_name }}">
         <rule-type>universal</rule-type>
         <from>
