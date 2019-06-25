@@ -42,7 +42,7 @@
               <hold-time>2</hold-time>
             </path-monitor>
             <nexthop>
-              <ip-address>"{{ vr-trust_nexthop }}"</ip-address>
+              <ip-address>"{{ vr_trust_nexthop }}"</ip-address>
             </nexthop>
             <bfd>
               <profile>None</profile>
