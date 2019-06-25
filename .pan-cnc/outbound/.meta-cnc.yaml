@@ -35,18 +35,18 @@ variables:
     description: Nat policy name
     default: outbound-nat
     type_hint: text
-  - name: vr_untrust_nexthop
-    description: First IP from UnTrust Subnet CIDR (i.e. 10.0.1.1)
-    default: "10.0.1.1"
-    type_hint: ip
-  #- name: vr-trust_nexthop
-  #  description: First IP from Trust Subnet CIDR (i.e. 10.0.2.1)
-  #  default: "10.0.2.1"
+  #- name: vr_untrust_nexthop
+  #  description: First IP from UnTrust Subnet CIDR (i.e. 10.0.1.1)
+  #  default: "10.0.1.1"
   #  type_hint: ip
-  #- name: spoke1_vnet_cidr
-  #  description: Spoke1 VNET Space (i.e. transit-vnet 10.1.0.0/16)
-  #  default: 10.1.0.0/16
-  #  type_hint: cidr
+  - name: vr-trust_nexthop
+    description: First IP from Trust Subnet CIDR (i.e. 10.0.2.1)
+    default: "10.0.2.1"
+    type_hint: ip
+  - name: spoke1_vnet_cidr
+    description: Spoke1 VNET Space (i.e. transit-vnet 10.1.0.0/16)
+    default: 10.1.0.0/16
+    type_hint: cidr
 # ---------------------------------------------------------------------
 # end of variables section
 
@@ -55,12 +55,12 @@ variables:
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
-  - name: untrust_routes
-    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='untrust-vr']/routing-table
-    file: vr-untrust_routes.xml
-#  - name: trust_routes
-#    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='trust-vr']/routing-table
-#    file: vr-trust_routes.xml
+#  - name: untrust_routes
+#    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='untrust-vr']/routing-table
+#    file: vr-untrust_routes.xml
+  - name: trust_routes
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='trust-vr']/routing-table
+    file: vr-trust_routes.xml
   - name: security_rules
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
     file: security_rules.xml
